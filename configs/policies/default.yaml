@@ -1,0 +1,11 @@
+safe_mode: true
+destructive_actions: deny
+active_testing:
+  require_authorization: true
+  require_scope: true
+  default_rate_limit_rps: 5
+  default_concurrency: 2
+  default_timeout_seconds: 300
+evidence:
+  immutable: true
+  hash_algorithm: sha256

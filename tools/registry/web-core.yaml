@@ -1,0 +1,17 @@
+tools:
+  - name: nmap
+    repository: https://github.com/nmap/nmap
+    capabilities: [service-discovery, port-discovery]
+    safety_policy: {active: true, destructive: false, requires_scope: true}
+  - name: httpx
+    repository: https://github.com/projectdiscovery/httpx
+    capabilities: [http-probing]
+    safety_policy: {active: true, destructive: false, requires_scope: true}
+  - name: nuclei
+    repository: https://github.com/projectdiscovery/nuclei
+    capabilities: [vulnerability-detection, misconfiguration]
+    safety_policy: {active: true, destructive: false, requires_scope: true}
+  - name: zap
+    repository: https://github.com/zaproxy/zaproxy
+    capabilities: [dast, proxy, active-testing]
+    safety_policy: {active: true, destructive: false, requires_scope: true}
