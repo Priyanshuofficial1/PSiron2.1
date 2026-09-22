@@ -1,0 +1,33 @@
+capabilities:
+  web.recon:
+    description: Discover and profile web-facing assets.
+    required_inputs: [url, domain, ip]
+    target_kinds: [web, application, domain, ip]
+    tools: [amass, subfinder, dnsx, httpx, naabu, nmap, katana]
+  web.content-discovery:
+    description: Discover accessible web content and routes.
+    required_inputs: [url]
+    target_kinds: [web, application]
+    tools: [katana, ffuf]
+  web.vulnerability-detection:
+    description: Detect known web vulnerabilities and misconfigurations.
+    required_inputs: [url]
+    target_kinds: [web, application]
+    tools: [nuclei, zap]
+  web.xss:
+    description: Assess authorized web targets for cross-site scripting.
+    required_inputs: [url]
+    target_kinds: [web, application]
+    tools: [nuclei, zap, dalfox]
+  api.assessment:
+    description: Assess API behavior against an API specification or URL.
+    required_inputs: [url]
+    target_kinds: [api, web, application]
+    technologies: [openapi, graphql, websocket]
+    tools: [zap, schemathesis]
+  source.web-security:
+    description: Analyze web application source code for security issues.
+    required_inputs: [git, source]
+    target_kinds: [source, application, web]
+    technologies: [react, nextjs, node, express, django, fastapi, flask, spring, rails, go]
+    tools: [semgrep, codeql, gitleaks]
